@@ -24,18 +24,18 @@ const UserInput = (props) => {
 
     let urls;
     if (type === "yt") {
-      urls = "https://social-media-media-downloader.vercel.app//api/v1/yt";
+      urls = "https://social-media-media-downloader.vercel.app/api/v1/yt";
     }
     if (type === "tw") {
-      urls = "https://social-media-media-downloader.vercel.app//api/v1/tw";
+      urls = "https://social-media-media-downloader.vercel.app/api/v1/tw";
     }
 
     if (type === "fb") {
-      urls = "https://social-media-media-downloader.vercel.app//api/v1/fb";
+      urls = "https://social-media-media-downloader.vercel.app/api/v1/fb";
     }
 
     if (type === "ig") {
-      urls = "https://social-media-media-downloader.vercel.app//api/v1/ig";
+      urls = "https://social-media-media-downloader.vercel.app/api/v1/ig";
     }
 
     const options = {
