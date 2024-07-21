@@ -1,0 +1,36 @@
+version: "3.1"
+
+services:
+  client:
+    image: vidown-client-image:latest
+    container_name: vidown-client-container
+    build:
+      context: ./public
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    networks:
+      - ydown-network
+    volumes:
+      - ./public:/app
+
+  server:
+    image: vidown-server-image:latest
+    container_name: vidown-server-container
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    env_file:
+      - ./server/.env
+    ports:
+      - "3030:3030"
+    networks:
+      - ydown-network
+    volumes:
+      - ./server:/app
+
+networks:
+  ydown-network:
+    driver: bridge
